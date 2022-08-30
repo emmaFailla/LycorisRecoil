@@ -226,6 +226,7 @@ body {
   width: 70px;
   border-radius: 50%;
   overflow: hidden;
+  border: #f0555a 2px solid;
 }
 
 #main .characterSelection__container .characterSlider__buttons .characterCircle img {

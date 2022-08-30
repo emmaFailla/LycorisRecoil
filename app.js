@@ -1,4 +1,5 @@
 let position = 0
+let colores = ["rojo","azul","verde","amarillo","violeta"]
 const rightButton = document.querySelector(".rightButton")
 const leftButton = document.querySelector(".leftButton")
 const sliderImages = document.querySelectorAll(".sliderImgs")
@@ -8,27 +9,32 @@ const descriptions = document.querySelectorAll('.description')
 const info = document.querySelectorAll('.info')
 const borderCircle = document.querySelector('.characterCircle')
 
-borderCircle.style.border = "solid #f0555a 3px"
+
 
 //Cambiar color del circulo
-function circleColor(n){
-    if(n == 0){
+function circleColor(){
+
+
+    if(position == 0 ){
         borderCircle.style.border = "solid #f0555a 3px"
     }
-    else if(n == 1){
+     else if(position == 1 ){
         borderCircle.style.border = "solid #2a96fa 3px"
     }
-    else if(n == 2){
+    else if(position == 2 ){
         borderCircle.style.border = "solid #00b4aa 3px"
     }
-    else if(n == 3){
+    else if(position == 3 ){
         borderCircle.style.border = "solid #fde56b 3px"
     }
-    else if(n == 4){
+    else if(position == 4 ){
         borderCircle.style.border = "solid #7a5668 3px"
     }
     
+    
 }
+
+
 
 
 
@@ -133,25 +139,27 @@ rightButton.addEventListener('click',()=>{
     
     //cambiando los nombres
     position+=1
-    circleColor(position)
     showNames(position)
     showDescription(position)
     showInfo(position)
     showSliderImages(position)
     showCircles(position)
+    circleColor(position)
     console.log(position)
 
     
 })
 leftButton.addEventListener('click',()=>{
     position-=1
-    circleColor(position)
     showNames(position)
     showDescription(position)
     showInfo(position)
     showCircles(position)
     showSliderImages(position)
+    circleColor(position)
     console.log(position)
 })
+
+
 
    
