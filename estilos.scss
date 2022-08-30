@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body{
+    background-image: url(imgs/FondoDos.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+
+    .personajes__title{
+        font-size: 2rem;
+        justify-self: flex-end;
+        
+    }
+
+    .lycorisRecoil__logo{
+        max-width: 624px;
+        min-height: 170px;
+        margin-left: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        
+        
+
+        img{
+            height: 50%;
+            width: 50%;
+        }
+    }
+}
+
+#main{
+    display: grid;
+    height: 95vh;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+
+   
+
+    .characterSelection__container{
+        grid-column: 5/9;
+        grid-row: 2/17;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 7fr 1fr;
+
+        .characterSlider{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+
+            .sliderImg__container{
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                flex-flow: column;
+                
+
+                .sliderImgs{
+                    height: 100%;
+                    width: 50vw;
+                    position: relative;
+                    transition: all 1s;
+                    
+                    
+                    
+
+                    img{
+                    height: 120%;
+                    width: 120%;
+                    object-fit: contain;
+                    z-index: 2;
+                    
+                    
+                }
+                }
+
+                .fade{
+                    animation-name: fade;
+                    animation-duration: 1s;
+                }
+
+                //Chisato´s shadow
+                .chisatoImg::after{
+                    content: url(imgs/chisatoSlider.png);
+                    position: absolute;
+                    object-fit: contain;
+                    opacity: .4;
+                    left: 15%;
+                    top: -11%;
+                }
+            
+
+                .takinaImg::after{
+                    content: url(imgs/takinaSlider.png);
+                    position: absolute;
+                    object-fit: contain;
+                    opacity: .4;
+                    z-index: -1;
+                    left: 15%;
+                    top: -11%;
+                    
+                }
+
+                .mizukiImg::after{
+                    content: url(imgs/mizukiSlider.png);
+                    position: absolute;
+                    object-fit: contain;
+                    opacity: .4;
+                    z-index: -1;
+                    left: 15%;
+                    top: 0%;
+                    
+                    
+                }
+
+                .kurumiImg::after{
+                    content: url(imgs/kurumiSlider.png);
+                    position: absolute;
+                    object-fit: contain;
+                    opacity: .4;
+                    z-index: -1;
+                    left: 15%;
+                    top: -11%;
+                    
+                }
+
+                .mikaImg::after{
+                    content: url(imgs/mikaSlider.png);
+                    position: absolute;
+                    object-fit: contain;
+                    opacity: .4;
+                    z-index: -1;
+                    left: 15%;
+                    top: 0%;
+                    
+                }
+                
+
+                
+
+                
+                
+            }
+        }
+
+        .characterSlider__buttons{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            top:10px;
+            
+
+            .leftButton__container{
+                margin-right: 10px;
+                .leftButton{
+                    font-size: 2rem;
+                    &:hover{
+                        cursor: pointer;
+                        color: #00b4aa;
+                    }
+                    
+                }
+            }
+
+            .rightButton__container{
+                margin-left: 10px;
+                .rightButton{
+                    font-size: 2rem;
+                    &:hover{
+                        cursor: pointer;
+                        color:#f0555a ;
+                    }
+                } 
+                
+            }
+
+
+            .characterCircle{
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+    }
+    .characterDescription__container{
+         grid-row: 2/8;
+        grid-column:1/5;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+        margin-top:1rem ;
+
+        .characterNames{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .names{
+                font-size:3rem;
+                font-family: 'Quicksand', sans-serif;
+            }
+        }
+
+        .characterDescription{
+            display: flex;
+            flex-flow:column;
+            align-items: center;
+            width: 100%;
+            
+
+            .description{
+                position: relative;
+                font-size: 1.5rem;
+                margin-left: 1rem;
+                text-align: justify;
+             
+            }
+        }
+
+        .characterInfo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .info{
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                
+                
+                
+
+                .info__item{
+                    padding-right: 8px;
+                    margin-left: 8px;
+                    list-style: none;
+                    font-size: 1.5rem;
+                    border-right: #1c1c1c solid 2px;
+                }
+
+            }
+        }
+    }
+    .videoPresentacion__container{
+        grid-row: 8/17;
+        grid-column:1/5;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity:0 ;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width : 1300px){
+    #main{
+        height: 150vh;
+        grid-template-rows: repeat(32 , 1fr);
+        justify-items: center;
+
+        
+
+        .characterDescription__container{
+            grid-row: 1/10;
+            grid-column: 1/9;
+            width: 60%;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+
+            .characterNames{
+                .names{
+                    font-size:2.5rem;
+                }
+            }
+
+           .characterDescription{
+            overflow: auto;
+            text-align: justify;
+            border-bottom: solid #1c1c1c 2px;
+            margin-top: 10px;
+
+            .description{
+                margin-left: 0;
+                padding: 10px;
+                font-size: 1.5rem;
+            }
+            }
+
+            .characterInfo{
+
+                .info{
+                    display: flex;
+                    flex-flow: column;
+                    align-items: flex-start;
+
+                    .info__item{
+                        font-size: 1.5rem;
+                        border-right: none;
+                    }
+                }
+            }
+            
+        }
+        .characterSelection__container{
+            position: relative;
+            
+            grid-row: 10/22;
+            grid-column: 1/9;
+
+            //.characterSlider__buttons{
+                .leftButton__container{
+                    .rightButton{
+                        font-size: 3rem;
+                        padding: 10px;
+                    }
+                }
+                .rightButton__container{
+                    .leftButton{
+                        font-size: 3rem;
+                        padding: 10px;
+                    }
+                }
+            //}
+
+            .characterSlider{
+                
+                .sliderImg__container{
+                    display: flex;
+                    .sliderImgs{
+
+                        img{
+                            height: 150%;
+                            width: 150%;
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            
+        }
+        .videoPresentacion__container{
+            grid-row: 22/33;
+            grid-column: 1/9;
+            justify-content: center;
+            position: relative;
+            bottom: 2rem;
+        }
+    }
+}
+
+@media only screen and (max-width : 600px){
+    #main{
+        height: 200vh;
+        grid-template-rows: repeat(32 , 1fr);
+        justify-items: center;
+
+        
+
+        .characterDescription__container{
+            grid-row: 1/10;
+            grid-column: 1/9;
+            width: 60%;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+
+            .characterNames{
+                .names{
+                    font-size:1.5rem;
+                }
+            }
+
+           .characterDescription{
+            overflow: auto;
+            text-align: justify;
+            border-bottom: solid #1c1c1c 2px;
+            margin-top: 10px;
+
+            .description{
+                margin-left: 0;
+                padding: 10px;
+                font-size: 1rem;
+            }
+            }
+
+            .characterInfo{
+
+                .info{
+                    display: flex;
+                    flex-flow: column;
+                    align-items: flex-start;
+
+                    .info__item{
+                        font-size: 1rem;
+                        border-right: none;
+                    }
+                }
+            }
+            
+        }
+        .characterSelection__container{
+            position: relative;
+            
+            grid-row: 10/22;
+            grid-column: 1/9;
+
+            //.characterSlider__buttons{
+                .leftButton__container{
+                    .rightButton{
+                        font-size: 3rem;
+                        padding: 10px;
+                    }
+                }
+                .rightButton__container{
+                    .leftButton{
+                        font-size: 3rem;
+                        padding: 10px;
+                    }
+                }
+            //}
+
+            .characterSlider{
+                
+                .sliderImg__container{
+                    display: flex;
+                    width: 100vw;
+                    .sliderImgs{
+                        width: 100vw;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            
+        }
+        .videoPresentacion__container{
+            grid-row: 22/33;
+            grid-column: 1/9;
+            width:100vw ;
+            justify-content: center;
+            position: relative;
+            bottom: 2rem;
+
+            .ytVideo{
+                width: 98%;
+            }
+        }
+    }
+}
