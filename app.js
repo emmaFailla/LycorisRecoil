@@ -6,6 +6,33 @@ const sliderCircles = document.querySelectorAll(".circleImages")
 const names = document.querySelectorAll('.names')
 const descriptions = document.querySelectorAll('.description')
 const info = document.querySelectorAll('.info')
+const borderCircle = document.querySelector('.characterCircle')
+
+borderCircle.style.border = "solid #f0555a 3px"
+
+//Cambiar color del circulo
+function circleColor(n){
+    if(n == 0){
+        borderCircle.style.border = "solid #f0555a 3px"
+    }
+    else if(n == 1){
+        borderCircle.style.border = "solid #2a96fa 3px"
+    }
+    else if(n == 2){
+        borderCircle.style.border = "solid #00b4aa 3px"
+    }
+    else if(n == 3){
+        borderCircle.style.border = "solid #fde56b 3px"
+    }
+    else if(n == 4){
+        borderCircle.style.border = "solid #7a5668 3px"
+    }
+    
+}
+
+
+
+
 
 //MostrarNombres
 function showNames (n){
@@ -106,6 +133,7 @@ rightButton.addEventListener('click',()=>{
     
     //cambiando los nombres
     position+=1
+    circleColor(position)
     showNames(position)
     showDescription(position)
     showInfo(position)
@@ -117,6 +145,7 @@ rightButton.addEventListener('click',()=>{
 })
 leftButton.addEventListener('click',()=>{
     position-=1
+    circleColor(position)
     showNames(position)
     showDescription(position)
     showInfo(position)
